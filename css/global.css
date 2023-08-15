@@ -25,6 +25,11 @@
 body {
   margin: 0px;
   font-family: Roboto, sans-serif;
+  color: var(--p10);
+}
+
+h1,h2,h3,h4, ul {
+  margin: 0px;
 }
 
 ul {
@@ -34,6 +39,14 @@ ul {
 
 a {
   text-decoration: none;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bg {
+  background-color: var(--p2);
 }
 
 .types {

@@ -1,0 +1,9 @@
+.pokemons{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+}
+
+.pokemon {
+  grid-column: 1/-1;
+  display: flex;
+}

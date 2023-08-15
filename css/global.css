@@ -1,0 +1,52 @@
+:root {
+  --p1: #000000;
+  --p2: #111111;
+  --p3: #222222;
+  --p4: #333333;
+  --p5: #444444;
+  --p6: #555555;
+  --p7: #7E7E7E;
+  --p8: #AAAAAA;
+  --p9: #C5C5C5;
+  --p10: #DCDCDC;
+  --p11: #EDEDED;
+  --p12: #F7F7F7;
+  --c1: #820608;
+  --c2: #E10B00;
+  --c3: #F5F6CA;
+  --c4: #FFB307;
+  --c5: #064BCE;
+  --f1: 1.25rem;
+  --f2: 1.5rem;
+  --f3: 2.25rem;
+}
+
+
+body {
+  margin: 0px;
+  font-family: Roboto, sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.types {
+  color: var(--p2);
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-size: var(--f1);
+}
+
+.grass {
+  background-color: #499356;
+}
+
+.poison {
+  background-color: #B97FC9;
+}

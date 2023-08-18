@@ -66,3 +66,83 @@ a {
   background-color: #B97FC9;
   padding: 6px 20px;
 }
+
+.fire {
+ background-color: #FD7D24;
+ padding: 6px 35px;
+}
+
+.bug {
+  background-color: #729F3F;
+  padding: 6px 37px;
+}
+
+.dragon {
+  background: linear-gradient(#53A4CF 50%, #F16E57 50%);
+  padding: 6px 18px;
+}
+
+.fairy {
+  background-color: #FDB9E9;
+  padding: 6px 30px;
+}
+
+.ghost {
+  background-color: #7B61A3;
+  padding: 6px 25px;
+}
+
+.ground {
+  background: linear-gradient(#F7DE3F 50%, #CDB841 50%);
+  padding: 6px 18px;
+}
+
+.normal {
+  background-color: #A4ACAF;
+  padding: 6px 20px;
+}
+
+.psych {
+  background-color: #F366B9;
+  padding: 6px 25px;
+}
+
+.steel {
+  background-color: #9EB7B8;
+  padding: 6px 28px;
+}
+
+.dark {
+  background-color: #707070;
+  padding: 6px 32px;
+}
+
+.eletric {
+  background-color: #EED535;
+  padding: 6px 20px;
+}
+
+.fighter {
+  background-color: #D56723;
+  padding: 6px 18px;
+}
+
+.flying {
+  background: linear-gradient(#3DC7EF 50%, #BDB9B8 50%);
+  padding: 6px 25px;
+}
+
+.ice {
+  background-color: #51C4E7;
+  padding: 6px 40px;
+}
+
+.rock {
+  background-color: #A38C21;
+  padding: 6px 30px;
+}
+
+.water {
+  background-color: #4592C4;
+  padding: 6px 25px;
+}

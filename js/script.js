@@ -1,5 +1,5 @@
 "use strict";
-async function fetchAll(url) {
+async function getPokeUrls(url) {
     const busca = await fetch(url);
     const data = await busca.json();
     const resultados = Array.from(await data.results);
@@ -7,8 +7,14 @@ async function fetchAll(url) {
     resultados.forEach((objeto) => {
         pokeurls.push(objeto.url);
     });
-    console.log(pokeurls);
-    return await resultados;
+    const pokeinfos = [];
+    for (let i = 0; i <= 1009; i++) {
+        fetch(pokeurls[i]).then((resposta) => resposta.json).then((resposta) => {
+            pokeinfos.push(resposta);
+        });
+    }
+    console.log(pokeinfos);
+    return resultados;
 }
-fetchAll("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0");
+getPokeUrls("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0");
 //# sourceMappingURL=script.js.map

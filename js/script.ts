@@ -1,37 +1,35 @@
-// async function getPokeUrls(url: string) {
-// const busca = await fetch(url);
-// const data = await busca.json();
-// const resultados = Array.from(await data.results);
-// const pokeurls = [];
-// resultados.forEach((objeto) => {
-//   pokeurls.push(objeto.url)
-// });
-// return resultados;
-// }
+interface pokemonResultGeral {
+  name: string;
+  url: string;
+}
 
-// async function getPokeInfo(urls: string[]) {
-  
-// }
-
-// getPokeUrls("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0");
-
+interface pokemonInfoGeral {
+  id: number;
+  name: string;
+}
 
 async function getPokeUrls(url: string) {
-  const busca = await fetch(url);
-  const data = await busca.json();
-  const resultados = Array.from(await data.results);
-  const pokeurls = [];
-  resultados.forEach((objeto) => {
-    pokeurls.push(objeto.url)
+const busca = await fetch(url);
+const data = await busca.json();
+const resultados: pokemonResultGeral[] = Array.from(await data.results);
+console.log(resultados);
+const pokeurls: string[] = [];
+resultados.forEach((objeto :pokemonResultGeral) => {
+  pokeurls.push(objeto.url)
+});
+console.log(pokeurls)
+return pokeurls;
+}
+
+async function getPokeInfo() {
+  const pokeurls: string[] = await getPokeUrls("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0");
+  const pokemons = [] 
+  await pokeurls.forEach((url: string) => {
+   const busca = fetch(url);
+   const data =  busca.json();
+   pokemons.push(data);
   });
-  const pokeinfos = [];
-  for (let i = 0; i <= 1009; i++) {
-    fetch(pokeurls[i]).then((resposta) => resposta.json).then((resposta) => {
-      pokeinfos.push(resposta);
-    })
-  }
-  console.log(pokeinfos);
-  return resultados;
-  }
-  
-  getPokeUrls("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0");
+  console.log(pokemons);
+}
+
+getPokeInfo();

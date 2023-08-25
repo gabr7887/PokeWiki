@@ -43,4 +43,12 @@ export default class getPokemon{
     return pokemons;
   }
 
+  // async getFinalInfo() {
+  //   const pokemons = await this.getPokeInfo();
+  //   let counter: number = 0;
+  //   for () {
+  //     let acumulador = 0;
+
+  //   }
+  // }
 }

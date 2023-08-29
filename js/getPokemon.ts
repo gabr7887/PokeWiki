@@ -10,9 +10,10 @@ interface pokemonInfoGeral {
 
 export default class getPokemon{
   url: string;
-  
+  acumulador: number;
   constructor(Url: string) {
     this.url = Url;
+    this.acumulador = 0;
   }
 
   async getPokeUrls() {
@@ -37,18 +38,10 @@ export default class getPokemon{
   async getPokeInfo() {
     const pokeurls: string[] = await this.getPokeUrls();
     const pokemons = [];
-    for (let i = 0; i < 1010; i++) {
-      pokemons.push(await this.finalFetch(pokeurls[i]));
+    for (let i = 0; i < 14; i++) {
+      pokemons.push(await this.finalFetch(pokeurls[this.acumulador]));
+      this.acumulador++;
     }
     return pokemons;
   }
-
-  // async getFinalInfo() {
-  //   const pokemons = await this.getPokeInfo();
-  //   let counter: number = 0;
-  //   for () {
-  //     let acumulador = 0;
-
-  //   }
-  // }
 }

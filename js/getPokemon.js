@@ -1,7 +1,9 @@
 export default class getPokemon {
     url;
+    acumulador;
     constructor(Url) {
         this.url = Url;
+        this.acumulador = 0;
     }
     async getPokeUrls() {
         const busca = await fetch(this.url);
@@ -23,8 +25,9 @@ export default class getPokemon {
     async getPokeInfo() {
         const pokeurls = await this.getPokeUrls();
         const pokemons = [];
-        for (let i = 0; i < 1010; i++) {
-            pokemons.push(await this.finalFetch(pokeurls[i]));
+        for (let i = 0; i < 14; i++) {
+            pokemons.push(await this.finalFetch(pokeurls[this.acumulador]));
+            this.acumulador++;
         }
         return pokemons;
     }

@@ -6,17 +6,24 @@ export default class pokemonLogic {
   constructor(url: string) {
   this.showPoke = new showPokemon(url);
   this.scrollValue = 0;
-  }
-  
-  onScroll(event) {
-    console.log(event);
-    this.scrollValue += +window.scrollY;
-    console.log(`${this.scrollValue}`);
-    console.log(`window ${window.scrollY}`);
+
+  this.onScroll = this.onScroll.bind(this);
   }
 
+  onScroll(event) {
+    console.log(event);
+    if (this.scrollValue + 1000 < window.scrollY) {
+      this.showPoke.criaPoke();
+      this.scrollValue = window.scrollY;
+    } else {
+      console.log(`ainda não ${this.scrollValue}`)
+    }
+    console.log(`window ${window.scrollY}`);
+  }
+  
   onInit() {
     this.showPoke.criaPoke();
     addEventListener("scroll", this.onScroll);
+
   }
 } 

@@ -38,7 +38,7 @@ export default class getPokemon{
   async getPokeInfo() {
     const pokeurls: string[] = await this.getPokeUrls();
     const pokemons = [];
-    for (let i = 0; i < 14; i++) {
+    for (let i = 0; i < 15; i++) {
       pokemons.push(await this.finalFetch(pokeurls[this.acumulador]));
       this.acumulador++;
     }

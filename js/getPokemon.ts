@@ -20,12 +20,11 @@ export default class getPokemon{
     const busca = await fetch(this.url);
     const data = await busca.json();
     const resultados: pokemonResultGeral[] = Array.from(await data.results);
-    console.log(resultados);
     const pokeurls: string[] = [];
     resultados.forEach((objeto :pokemonResultGeral) => {
       pokeurls.push(objeto.url)
     });
-    console.log(pokeurls)
+    console.log("fez o fetch")
     return pokeurls;
   }
 
@@ -38,10 +37,14 @@ export default class getPokemon{
   async getPokeInfo() {
     const pokeurls: string[] = await this.getPokeUrls();
     const pokemons = [];
+    if (this.acumulador < 1010) {
     for (let i = 0; i < 15; i++) {
       pokemons.push(await this.finalFetch(pokeurls[this.acumulador]));
       this.acumulador++;
     }
     return pokemons;
+    } else {
+      return ("fetch finalizado")
+    }
   }
 }

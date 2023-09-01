@@ -7,16 +7,11 @@ export default class pokemonLogic {
         this.scrollValue = 0;
         this.onScroll = this.onScroll.bind(this);
     }
-    onScroll(event) {
-        console.log(event);
-        if (this.scrollValue + 1000 < window.scrollY) {
+    onScroll() {
+        if (this.showPoke.livre === true) {
             this.showPoke.criaPoke();
             this.scrollValue = window.scrollY;
         }
-        else {
-            console.log(`ainda não ${this.scrollValue}`);
-        }
-        console.log(`window ${window.scrollY}`);
     }
     onInit() {
         this.showPoke.criaPoke();

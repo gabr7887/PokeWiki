@@ -3,12 +3,15 @@ import getPokemon from "./getPokemon.js";
 export default class showPokemon{
   pokeinfo: getPokemon;
   container: HTMLElement | null;
+  livre: boolean;
   constructor(Url: string) {
     this.container = document.querySelector(".pokemons");
     this.pokeinfo = new getPokemon(Url);
+    this.livre = true;
   }
-
+  
   async criaPoke() {
+    this.livre = false;
     const pokemons = await this.pokeinfo.getPokeInfo();
     pokemons.forEach((poke) => {
       const pokeDiv = document.createElement("div");
@@ -35,6 +38,8 @@ export default class showPokemon{
       pokeDiv.appendChild(typesDiv);
       this.container?.appendChild(pokeDiv);
     });
+    console.log("terminou a cria poke")
+    this.livre = true;
   }
 
 }

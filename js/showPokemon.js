@@ -2,11 +2,14 @@ import getPokemon from "./getPokemon.js";
 export default class showPokemon {
     pokeinfo;
     container;
+    livre;
     constructor(Url) {
         this.container = document.querySelector(".pokemons");
         this.pokeinfo = new getPokemon(Url);
+        this.livre = true;
     }
     async criaPoke() {
+        this.livre = false;
         const pokemons = await this.pokeinfo.getPokeInfo();
         pokemons.forEach((poke) => {
             const pokeDiv = document.createElement("div");
@@ -33,6 +36,8 @@ export default class showPokemon {
             pokeDiv.appendChild(typesDiv);
             this.container?.appendChild(pokeDiv);
         });
+        console.log("terminou a cria poke");
+        this.livre = true;
     }
 }
 //# sourceMappingURL=showPokemon.js.map

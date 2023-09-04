@@ -19,6 +19,7 @@ export default class pokemonLogic {
   
   onInit() {
     this.showPoke.criaPoke();
+    addEventListener("mousemove", this.onScroll);
     addEventListener("scroll", this.onScroll);
   }
-} 
+}

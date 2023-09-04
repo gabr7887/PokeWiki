@@ -30,3 +30,8 @@ header nav a{
   width: 22px;
   height: 24px;
 }
+
+#busca-input {
+  display: none;
+}
+

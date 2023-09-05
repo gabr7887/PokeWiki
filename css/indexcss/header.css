@@ -26,12 +26,12 @@ header nav a{
 
 }
 
-#busca {
+#busca-img {
   width: 22px;
   height: 24px;
 }
 
-#busca-input {
+.buscaOn {
   display: none;
 }
 

@@ -4,12 +4,13 @@ export default class busca {
     constructor(btn, input) {
         this.btn = document.querySelector(`#${btn}`);
         this.input = document.querySelector(`#${input}`);
+        this.turnOn = this.turnOn.bind(this);
     }
     turnOn(event) {
         event.preventDefault();
         if (this.btn instanceof HTMLAnchorElement && this.input instanceof HTMLInputElement) {
-            this.btn.style.display = "none";
-            this.input.style.display = "block";
+            this.btn.classList.toggle("buscaOn");
+            this.input.classList.toggle("buscaOn");
         }
     }
     onChanges() {

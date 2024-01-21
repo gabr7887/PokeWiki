@@ -27,6 +27,7 @@ body {
   margin: 0px;
   font-family: Roboto, sans-serif;
   color: var(--p10);
+  background-color: var(--p1);
 }
 
 h1,h2,h3,h4, ul {

@@ -1,5 +1,15 @@
 import getPokemon from "./getPokemon.js";
 
+interface pokeTipos {
+  slot: number;
+  type: tipo;
+}
+
+interface tipo {
+  name: string;
+  url: string;
+}
+
 export default class showPokemon{
   pokeinfo: getPokemon;
   container: HTMLElement | null;
@@ -13,7 +23,7 @@ export default class showPokemon{
   async criaPoke() {
     this.livre = false;
     const pokemons = await this.pokeinfo.getPokeInfo();
-    pokemons.forEach((poke) => {
+    pokemons?.forEach((poke) => {
       const pokeDiv = document.createElement("div");
       pokeDiv.classList.add("pokemon");
       const fotoPoke = document.createElement("img");
@@ -26,7 +36,7 @@ export default class showPokemon{
       pokeId.textContent = poke.id;
       const typesDiv = document.createElement("div");
       typesDiv.classList.add("poketipos");
-      poke.types.forEach((tipo) => {
+      poke.types.forEach((tipo: pokeTipos) => {
         const tipoElement = document.createElement("span");
         tipoElement.classList.add("types", tipo.type.name);
         tipoElement.textContent = tipo.type.name;
@@ -38,7 +48,6 @@ export default class showPokemon{
       pokeDiv.appendChild(typesDiv);
       this.container?.appendChild(pokeDiv);
     });
-    console.log("terminou a cria poke")
     this.livre = true;
   }
 

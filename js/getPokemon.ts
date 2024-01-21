@@ -3,11 +3,6 @@ interface pokemonResultGeral {
   url: string;
 }
 
-interface pokemonInfoGeral {
-  id: number;
-  name: string;
-}
-
 export default class getPokemon{
   url: string;
   acumulador: number;
@@ -43,8 +38,6 @@ export default class getPokemon{
       this.acumulador++;
     }
     return pokemons;
-    } else {
-      return ("fetch finalizado")
     }
   }
 }

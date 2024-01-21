@@ -4,7 +4,7 @@ export default class busca {
   constructor(btn: string, input: string) {
     this.btn = document.querySelector(`#${btn}`);
     this.input = document.querySelector(`#${input}`);
-    
+
     this.turnOn = this.turnOn.bind(this);
   }
 
@@ -15,10 +15,6 @@ export default class busca {
       this.btn.classList.toggle("buscaOn");
       this.input.classList.toggle("buscaOn");
     }
-  }
-
-  onChanges() {
-
   }
 
   onInit() {

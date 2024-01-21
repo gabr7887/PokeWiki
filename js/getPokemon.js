@@ -13,7 +13,6 @@ export default class getPokemon {
         resultados.forEach((objeto) => {
             pokeurls.push(objeto.url);
         });
-        console.log("fez o fetch");
         return pokeurls;
     }
     async finalFetch(url) {
@@ -30,9 +29,6 @@ export default class getPokemon {
                 this.acumulador++;
             }
             return pokemons;
-        }
-        else {
-            return ("fetch finalizado");
         }
     }
 }

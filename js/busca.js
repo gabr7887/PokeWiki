@@ -13,8 +13,6 @@ export default class busca {
             this.input.classList.toggle("buscaOn");
         }
     }
-    onChanges() {
-    }
     onInit() {
         if (this.btn instanceof HTMLAnchorElement && this.input instanceof HTMLInputElement) {
             this.btn.addEventListener("click", this.turnOn);

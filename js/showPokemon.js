@@ -11,7 +11,7 @@ export default class showPokemon {
     async criaPoke() {
         this.livre = false;
         const pokemons = await this.pokeinfo.getPokeInfo();
-        pokemons.forEach((poke) => {
+        pokemons?.forEach((poke) => {
             const pokeDiv = document.createElement("div");
             pokeDiv.classList.add("pokemon");
             const fotoPoke = document.createElement("img");
@@ -36,7 +36,6 @@ export default class showPokemon {
             pokeDiv.appendChild(typesDiv);
             this.container?.appendChild(pokeDiv);
         });
-        console.log("terminou a cria poke");
         this.livre = true;
     }
 }

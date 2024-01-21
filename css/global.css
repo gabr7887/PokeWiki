@@ -49,6 +49,7 @@ a {
 
 .poketipos{
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 .types {

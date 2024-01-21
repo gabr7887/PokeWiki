@@ -19,7 +19,6 @@ export default class getPokemon{
     resultados.forEach((objeto :pokemonResultGeral) => {
       pokeurls.push(objeto.url)
     });
-    console.log("fez o fetch")
     return pokeurls;
   }
 

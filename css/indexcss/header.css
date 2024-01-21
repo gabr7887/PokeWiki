@@ -35,3 +35,14 @@ header nav a{
   display: none;
 }
 
+@media (max-width: 600px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  header nav ul {
+    flex-wrap: wrap;
+  }
+}
+
